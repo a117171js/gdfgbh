@@ -922,8 +922,8 @@ ${displayHtml}
 			</table>
             <h5>客户端参数如下：</h5>
             <ul>
-                <li>客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP 或者 反代IP</li>
-                <li>端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)，或反代IP对应端口</li>
+                <li>客户端地址(address)：自定义的域名 或者 \u4F18\u9009域名 或者 \u4F18\u9009IP 或者 \u53CD\u4EE3IP</li>
+                <li>端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)，或\u53CD\u4EE3IP对应端口</li>
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
@@ -953,8 +953,8 @@ ${displayHtml}
 			</table>
             <h5>客户端参数如下：</h5>
             <ul>
-                <li>客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP 或者 反代IP</li>
-                <li>端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)，或反代IP对应端口</li>
+                <li>客户端地址(address)：自定义的域名 或者 \u4F18\u9009域名 或者 \u4F18\u9009IP 或者 \u53CD\u4EE3IP</li>
+                <li>端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)，或\u53CD\u4EE3IP对应端口</li>
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
@@ -967,7 +967,7 @@ ${displayHtml}
 			<hr>
 			<br>	
 			<br>
-			<h3>3：聚合通用、Clash-meta、Sing-box订阅链接如下：</h3>
+			<h3>3：聚合通用、\u0043\u006C\u0061\u0073\u0068-meta、\u0053\u0069\u006E\u0067\u002D\u0062\u006F\u0078订阅链接如下：</h3>
 			<hr>
 			<p>注意：<br>1、默认每个订阅链接包含TLS+非TLS共13个端口节点<br>2、当前workers域名作为订阅链接，需通过代理进行订阅更新<br>3、如使用的客户端不支持分片功能，则TLS节点不可用</p>
 			<hr>
@@ -1005,7 +1005,7 @@ ${displayHtml}
 				<table class="table">
 						<thead>
 							<tr>
-								<th>Clash-meta订阅链接：</th>
+								<th>\u0043\u006C\u0061\u0073\u0068-meta订阅链接：</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -1019,7 +1019,7 @@ ${displayHtml}
 					<table class="table">
 					<thead>
 						<tr>
-							<th>Sing-box订阅链接：</th>
+							<th>\u0053\u0069\u006E\u0067\u002D\u0062\u006F\u0078订阅链接：</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -1071,8 +1071,8 @@ ${displayHtml}
 			</table>
             <h5>客户端参数如下：</h5>
             <ul>
-                <li>客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP 或者 反代IP</li>
-                <li>端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)，或反代IP对应端口</li>
+                <li>客户端地址(address)：自定义的域名 或者 \u4F18\u9009域名 或者 \u4F18\u9009IP 或者 \u53CD\u4EE3IP</li>
+                <li>端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)，或\u53CD\u4EE3IP对应端口</li>
                 <li>用户ID(uuid)：${userID}</li>
                 <li>传输协议(network)：ws 或者 websocket</li>
                 <li>伪装域名(host)：${hostName}</li>
@@ -1085,7 +1085,7 @@ ${displayHtml}
 			<hr>
             <br>
             <br>
-			<h3>2：聚合通用、Clash-meta、Sing-box订阅链接如下：</h3>
+			<h3>2：聚合通用、\u0043\u006C\u0061\u0073\u0068-meta、\u0053\u0069\u006E\u0067\u002D\u0062\u006F\u0078订阅链接如下：</h3>
 			<hr>
 			<p>注意：以下订阅链接仅6个TLS端口节点</p>
 			<hr>
@@ -1123,7 +1123,7 @@ ${displayHtml}
 				<table class="table">
 						<thead>
 							<tr>
-								<th>Clash-meta订阅链接：</th>
+								<th>\u0043\u006C\u0061\u0073\u0068-meta订阅链接：</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -1137,7 +1137,7 @@ ${displayHtml}
 					<table class="table">
 					<thead>
 						<tr>
-							<th>Sing-box订阅链接：</th>
+							<th>\u0053\u0069\u006E\u0067\u002D\u0062\u006F\u0078订阅链接：</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -1443,7 +1443,7 @@ return `{
 		"timestamp": true
 	  },
 	  "experimental": {
-		"clash_api": {
+		"\u0063\u006C\u0061\u0073\u0068_api": {
 		  "external_controller": "127.0.0.1:9090",
 		  "external_ui": "ui",
 		  "external_ui_download_url": "",
@@ -1481,11 +1481,11 @@ return `{
 			"disable_cache": true
 		  },
 		  {
-			"clash_mode": "Global",
+			"\u0063\u006C\u0061\u0073\u0068_mode": "Global",
 			"server": "\u0070\u0072\u006F\u0078\u0079dns"
 		  },
 		  {
-			"clash_mode": "Direct",
+			"\u0063\u006C\u0061\u0073\u0068_mode": "Direct",
 			"server": "localdns"
 		  },
 		  {
@@ -1897,11 +1897,11 @@ return `{
                         "action": "reject"
                          },
 		  {
-			"clash_mode": "Direct",
+			"\u0063\u006C\u0061\u0073\u0068_mode": "Direct",
 			"outbound": "direct"
 		  },
 		  {
-			"clash_mode": "Global",
+			"\u0063\u006C\u0061\u0073\u0068_mode": "Global",
 			"outbound": "select"
 		  },
 		  {
@@ -2105,7 +2105,7 @@ return `{
 			"timestamp": true
 		  },
 		  "experimental": {
-			"clash_api": {
+			"\u0063\u006C\u0061\u0073\u0068_api": {
 			  "external_controller": "127.0.0.1:9090",
 			  "external_ui": "ui",
 			  "external_ui_download_url": "",
@@ -2143,11 +2143,11 @@ return `{
 				"disable_cache": true
 			  },
 			  {
-				"clash_mode": "Global",
+				"\u0063\u006C\u0061\u0073\u0068_mode": "Global",
 				"server": "\u0070\u0072\u006F\u0078\u0079dns"
 			  },
 			  {
-				"clash_mode": "Direct",
+				"\u0063\u006C\u0061\u0073\u0068_mode": "Direct",
 				"server": "localdns"
 			  },
 			  {
@@ -2426,11 +2426,11 @@ return `{
                           "action": "reject"
                           },
 			  {
-				"clash_mode": "Direct",
+				"\u0063\u006C\u0061\u0073\u0068_mode": "Direct",
 				"outbound": "direct"
 			  },
 			  {
-				"clash_mode": "Global",
+				"\u0063\u006C\u0061\u0073\u0068_mode": "Global",
 				"outbound": "select"
 			  },
 			  {
