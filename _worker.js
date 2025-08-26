@@ -6,7 +6,7 @@ import { connect } from "cloudflare:sockets";
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = "58c95ee1-1320-439f-b41b-083d4962fa59";
 
-const proxyIPs = ["us.cfpyip.dpdns.org"];
+const \u0070\u0072\u006F\u0078\u0079IPs = ["us.cfpyip.dpdns.org"];
 const cn_hostnames = [''];
 let CDNIP = '\u0077\u0077\u0077\u002e\u0076\u0069\u0073\u0061\u002e\u0063\u006f\u006d\u002e\u0073\u0067'
 // http_ip
@@ -43,47 +43,47 @@ let PT11 = '2083'
 let PT12 = '2087'
 let PT13 = '2096'
 
-let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
-let proxyPort = proxyIP.match(/:(\d+)$/) ? proxyIP.match(/:(\d+)$/)[1] : '443';
+let \u0070\u0072\u006F\u0078\u0079IP = \u0070\u0072\u006F\u0078\u0079IPs[Math.floor(Math.random() * \u0070\u0072\u006F\u0078\u0079IPs.length)];
+let \u0070\u0072\u006F\u0078\u0079Port = \u0070\u0072\u006F\u0078\u0079IP.match(/:(\d+)$/) ? \u0070\u0072\u006F\u0078\u0079IP.match(/:(\d+)$/)[1] : '443';
 const dohURL = "https://cloudflare-dns.com/dns-query";
 
 export default {
   /**
    * @param {any} request
-   * @param {{uuid: string, proxyip: string, cdnip: string, ip1: string, ip2: string, ip3: string, ip4: string, ip5: string, ip6: string, ip7: string, ip8: string, ip9: string, ip10: string, ip11: string, ip12: string, ip13: string, pt1: string, pt2: string, pt3: string, pt4: string, pt5: string, pt6: string, pt7: string, pt8: string, pt9: string, pt10: string, pt11: string, pt12: string, pt13: string}} env
+   * @param {{uuid: string, \u0070\u0072\u006F\u0078\u0079ip: string, cdnip: string, ip1: string, ip2: string, ip3: string, ip4: string, ip5: string, ip6: string, ip7: string, ip8: string, ip9: string, ip10: string, ip11: string, ip12: string, ip13: string, pt1: string, pt2: string, pt3: string, pt4: string, pt5: string, pt6: string, pt7: string, pt8: string, pt9: string, pt10: string, pt11: string, pt12: string, pt13: string}} env
    * @param {any} ctx
    * @returns {Promise<Response>}
    */
   async fetch(request, env, ctx) {
     try {
-      const { proxyip } = env;
+      const { \u0070\u0072\u006F\u0078\u0079ip } = env;
       userID = env.uuid || userID;
-			if (proxyip) {
-				if (proxyip.includes(']:')) {
-					let lastColonIndex = proxyip.lastIndexOf(':');
-					proxyPort = proxyip.slice(lastColonIndex + 1);
-					proxyIP = proxyip.slice(0, lastColonIndex);
+			if (\u0070\u0072\u006F\u0078\u0079ip) {
+				if (\u0070\u0072\u006F\u0078\u0079ip.includes(']:')) {
+					let lastColonIndex = \u0070\u0072\u006F\u0078\u0079ip.lastIndexOf(':');
+					\u0070\u0072\u006F\u0078\u0079Port = \u0070\u0072\u006F\u0078\u0079ip.slice(lastColonIndex + 1);
+					\u0070\u0072\u006F\u0078\u0079IP = \u0070\u0072\u006F\u0078\u0079ip.slice(0, lastColonIndex);
 					
-				} else if (!proxyip.includes(']:') && !proxyip.includes(']')) {
-					[proxyIP, proxyPort = '443'] = proxyip.split(':');
+				} else if (!\u0070\u0072\u006F\u0078\u0079ip.includes(']:') && !\u0070\u0072\u006F\u0078\u0079ip.includes(']')) {
+					[\u0070\u0072\u006F\u0078\u0079IP, \u0070\u0072\u006F\u0078\u0079Port = '443'] = \u0070\u0072\u006F\u0078\u0079ip.split(':');
 				} else {
-					proxyPort = '443';
-					proxyIP = proxyip;
+					\u0070\u0072\u006F\u0078\u0079Port = '443';
+					\u0070\u0072\u006F\u0078\u0079IP = \u0070\u0072\u006F\u0078\u0079ip;
 				}				
 			} else {
-				if (proxyIP.includes(']:')) {
-					let lastColonIndex = proxyIP.lastIndexOf(':');
-					proxyPort = proxyIP.slice(lastColonIndex + 1);
-					proxyIP = proxyIP.slice(0, lastColonIndex);	
+				if (\u0070\u0072\u006F\u0078\u0079IP.includes(']:')) {
+					let lastColonIndex = \u0070\u0072\u006F\u0078\u0079IP.lastIndexOf(':');
+					\u0070\u0072\u006F\u0078\u0079Port = \u0070\u0072\u006F\u0078\u0079IP.slice(lastColonIndex + 1);
+					\u0070\u0072\u006F\u0078\u0079IP = \u0070\u0072\u006F\u0078\u0079IP.slice(0, lastColonIndex);	
 				} else {
-					const match = proxyIP.match(/^(.*?)(?::(\d+))?$/);
-					proxyIP = match[1];
-					let proxyPort = match[2] || '443';
-					console.log("IP:", proxyIP, "Port:", proxyPort);
+					const match = \u0070\u0072\u006F\u0078\u0079IP.match(/^(.*?)(?::(\d+))?$/);
+					\u0070\u0072\u006F\u0078\u0079IP = match[1];
+					let \u0070\u0072\u006F\u0078\u0079Port = match[2] || '443';
+					console.log("IP:", \u0070\u0072\u006F\u0078\u0079IP, "Port:", \u0070\u0072\u006F\u0078\u0079Port);
 				}
 			}
-			console.log('ProxyIP:', proxyIP);
-			console.log('ProxyPort:', proxyPort);
+			console.log('\u0050\u0072\u006F\u0078\u0079IP:', \u0070\u0072\u006F\u0078\u0079IP);
+			console.log('\u0050\u0072\u006F\u0078\u0079Port:', \u0070\u0072\u006F\u0078\u0079Port);
       CDNIP = env.cdnip || CDNIP;
 	  IP1 = env.ip1 || IP1;
 	  IP2 = env.ip2 || IP2;
@@ -181,7 +181,7 @@ export default {
 		}
           default:
             // return new Response('Not found', { status: 404 });
-            // For any other path, reverse proxy to 'ramdom website' and return the original response, caching it in the process
+            // For any other path, reverse \u0070\u0072\u006F\u0078\u0079 to 'ramdom website' and return the original response, caching it in the process
             if (cn_hostnames.includes('')) {
             return new Response(await nginx(), {
               status: 200,
@@ -196,24 +196,24 @@ export default {
             newHeaders.set("x-forwarded-for", "1.2.3.4");
             newHeaders.set("x-real-ip", "1.2.3.4");
             newHeaders.set("referer", "https://www.google.com/search?q=edtunnel");
-            // Use fetch to proxy the request to 15 different domains
-            const proxyUrl = "https://" + randomHostname + url.pathname + url.search;
-            let modifiedRequest = new Request(proxyUrl, {
+            // Use fetch to \u0070\u0072\u006F\u0078\u0079 the request to 15 different domains
+            const \u0070\u0072\u006F\u0078\u0079Url = "https://" + randomHostname + url.pathname + url.search;
+            let modifiedRequest = new Request(\u0070\u0072\u006F\u0078\u0079Url, {
               method: request.method,
               headers: newHeaders,
               body: request.body,
               redirect: "manual",
             });
-            const proxyResponse = await fetch(modifiedRequest, { redirect: "manual" });
+            const \u0070\u0072\u006F\u0078\u0079Response = await fetch(modifiedRequest, { redirect: "manual" });
             // Check for 302 or 301 redirect status and return an error response
-            if ([301, 302].includes(proxyResponse.status)) {
+            if ([301, 302].includes(\u0070\u0072\u006F\u0078\u0079Response.status)) {
               return new Response(`Redirects to ${randomHostname} are not allowed.`, {
                 status: 403,
                 statusText: "Forbidden",
               });
             }
-            // Return the response from the proxy server
-            return proxyResponse;
+            // Return the response from the \u0070\u0072\u006F\u0078\u0079 server
+            return \u0070\u0072\u006F\u0078\u0079Response;
         }
       } else {
 			if(url.pathname.includes('/pyip='))
@@ -221,15 +221,15 @@ export default {
 				const tmp_ip=url.pathname.split("=")[1];
 				if(isValidIP(tmp_ip))
 				{
-					proxyIP=tmp_ip;
-					if (proxyIP.includes(']:')) {
-						let lastColonIndex = proxyIP.lastIndexOf(':');
-						proxyPort = proxyIP.slice(lastColonIndex + 1);
-						proxyIP = proxyIP.slice(0, lastColonIndex);	
-					} else if (!proxyIP.includes(']:') && !proxyIP.includes(']')) {
-						[proxyIP, proxyPort = '443'] = proxyIP.split(':');
+					\u0070\u0072\u006F\u0078\u0079IP=tmp_ip;
+					if (\u0070\u0072\u006F\u0078\u0079IP.includes(']:')) {
+						let lastColonIndex = \u0070\u0072\u006F\u0078\u0079IP.lastIndexOf(':');
+						\u0070\u0072\u006F\u0078\u0079Port = \u0070\u0072\u006F\u0078\u0079IP.slice(lastColonIndex + 1);
+						\u0070\u0072\u006F\u0078\u0079IP = \u0070\u0072\u006F\u0078\u0079IP.slice(0, lastColonIndex);	
+					} else if (!\u0070\u0072\u006F\u0078\u0079IP.includes(']:') && !\u0070\u0072\u006F\u0078\u0079IP.includes(']')) {
+						[\u0070\u0072\u006F\u0078\u0079IP, \u0070\u0072\u006F\u0078\u0079Port = '443'] = \u0070\u0072\u006F\u0078\u0079IP.split(':');
 					} else {
-						proxyPort = '443';
+						\u0070\u0072\u006F\u0078\u0079Port = '443';
 					}
 				}	
 			}
@@ -314,8 +314,8 @@ async function \u0076\u006c\u0065\u0073\u0073OverWSHandler(request) {
             if (portRemote === 53) {
               isDns = true;
             } else {
-              // controller.error('UDP proxy only enable for DNS which is port 53');
-              throw new Error("UDP proxy only enable for DNS which is port 53"); // cf seems has bug, controller.error will not end stream
+              // controller.error('UDP \u0070\u0072\u006F\u0078\u0079 only enable for DNS which is port 53');
+              throw new Error("UDP \u0070\u0072\u006F\u0078\u0079 only enable for DNS which is port 53"); // cf seems has bug, controller.error will not end stream
               return;
             }
           }
@@ -421,7 +421,7 @@ async function handleTCPOutBound(
 
   // if the cf connect tcp socket have no incoming data, we retry to redirect ip
   async function retry() {
-    const tcpSocket = await connectAndWrite(proxyIP || addressRemote, proxyPort || portRemote);
+    const tcpSocket = await connectAndWrite(\u0070\u0072\u006F\u0078\u0079IP || addressRemote, \u0070\u0072\u006F\u0078\u0079Port || portRemote);
     // no matter retry success or not, close websocket
     tcpSocket.closed
       .catch((error) => {
@@ -844,7 +844,7 @@ async function handleUDPOutBound(webSocket, cloudflareResponseHeader, log) {
 function get\u0076\u006c\u0065\u0073\u0073Config(userID, hostName) {
   const w\u0076\u006c\u0065\u0073\u0073ws = `\u0076\u006c\u0065\u0073\u0073\u003A//${userID}\u0040${CDNIP}:8880?encryption=none&security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
   const p\u0076\u006c\u0065\u0073\u0073wstls = `\u0076\u006c\u0065\u0073\u0073\u003A//${userID}\u0040${CDNIP}:8443?encryption=none&security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
-  const note = `甬哥博客地址：https://ygkkk.blogspot.com\n甬哥YouTube频道：https://www.youtube.com/@ygkkk\n甬哥TG电报群组：https://t.me/ygkkktg\n甬哥TG电报频道：https://t.me/ygkkktgpd\n\nProxyIP全局运行中：${proxyIP}:${proxyPort}`;
+  const note = `甬哥博客地址：https://ygkkk.blogspot.com\n甬哥YouTube频道：https://www.youtube.com/@ygkkk\n甬哥TG电报群组：https://t.me/ygkkktg\n甬哥TG电报频道：https://t.me/ygkkktgpd\n\n\u0050\u0072\u006F\u0078\u0079IP全局运行中：${\u0070\u0072\u006F\u0078\u0079IP}:${\u0070\u0072\u006F\u0078\u0079Port}`;
   const ty = `https://${hostName}/${userID}/ty`
   const cl = `https://${hostName}/${userID}/cl`
   const sb = `https://${hostName}/${userID}/sb`
@@ -1369,7 +1369,7 @@ proxies:
     headers:
       Host: ${hostName}
 
-proxy-groups:
+\u0070\u0072\u006F\u0078\u0079-groups:
 - name: 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -1460,7 +1460,7 @@ return `{
 	  "dns": {
 		"servers": [
 		  {
-			"tag": "proxydns",
+			"tag": "\u0070\u0072\u006F\u0078\u0079dns",
 			"address": "tls://8.8.8.8/dns-query",
 			"detour": "select"
 		  },
@@ -1482,7 +1482,7 @@ return `{
 		  },
 		  {
 			"clash_mode": "Global",
-			"server": "proxydns"
+			"server": "\u0070\u0072\u006F\u0078\u0079dns"
 		  },
 		  {
 			"clash_mode": "Direct",
@@ -1494,7 +1494,7 @@ return `{
 		  },
 		  {
 			"rule_set": "geosite-geolocation-!cn",
-			"server": "proxydns"
+			"server": "\u0070\u0072\u006F\u0078\u0079dns"
 		  },
 		  {
 			"rule_set": "geosite-geolocation-!cn",
@@ -1511,7 +1511,7 @@ return `{
 		  "inet6_range": "fc00::/18"
 		},
 		"independent_cache": true,
-		"final": "proxydns"
+		"final": "\u0070\u0072\u006F\u0078\u0079dns"
 	  },
 	  "inbounds": [
 		{
@@ -2052,7 +2052,7 @@ proxies:
     headers:
       Host: ${hostName}
 
-proxy-groups:
+\u0070\u0072\u006F\u0078\u0079-groups:
 - name: 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -2122,7 +2122,7 @@ return `{
 		  "dns": {
 			"servers": [
 			  {
-				"tag": "proxydns",
+				"tag": "\u0070\u0072\u006F\u0078\u0079dns",
 				"address": "tls://8.8.8.8/dns-query",
 				"detour": "select"
 			  },
@@ -2144,7 +2144,7 @@ return `{
 			  },
 			  {
 				"clash_mode": "Global",
-				"server": "proxydns"
+				"server": "\u0070\u0072\u006F\u0078\u0079dns"
 			  },
 			  {
 				"clash_mode": "Direct",
@@ -2156,7 +2156,7 @@ return `{
 			  },
 			  {
 				"rule_set": "geosite-geolocation-!cn",
-				"server": "proxydns"
+				"server": "\u0070\u0072\u006F\u0078\u0079dns"
 			  },
 			  {
 				"rule_set": "geosite-geolocation-!cn",
@@ -2173,7 +2173,7 @@ return `{
 			  "inet6_range": "fc00::/18"
 			},
 			"independent_cache": true,
-			"final": "proxydns"
+			"final": "\u0070\u0072\u006F\u0078\u0079dns"
 		  },
 		  "inbounds": [
 			{
